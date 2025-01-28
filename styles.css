@@ -1,0 +1,428 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    backdrop-filter: blur(0px); /* No blur effect */
+    padding: 10px 20px;
+    box-shadow: 0 20px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow at the bottom */
+    transition: top 0.3s, background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    z-index: 100;
+}
+
+#header.hidden {
+    top: -100px; /* Moves navbar up and hides it */
+}
+
+#header.scrolled {
+    background-color: rgba(255, 255, 255, 0.3); /* Slight transparency on scroll */
+    backdrop-filter: blur(5px); /* Optional frosted glass effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More prominent shadow on scroll */
+}
+
+/* Other navbar styles */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ecf1a0;
+    text-transform: none; /* Keeps text as written in HTML */
+    font-family: 'Comic Sans MS', cursive; /* Or your preferred font */
+    display: inline-block; /* Needed for the hover animation */
+    transition: transform 0.3s; /* Smooth transition back to normal state */
+}
+
+.logo:hover {
+    animation: jelly 0.8s ease; /* Jelly animation on hover */
+}
+
+@keyframes jelly {
+    0%, 100% {
+        transform: scale(1, 1); /* Normal size */
+    }
+    25% {
+        transform: scale(1.2, 0.8); /* Stretch horizontally */
+    }
+    50% {
+        transform: scale(0.8, 1.2); /* Stretch vertically */
+    }
+    75% {
+        transform: scale(1.1, 0.9); /* Slight horizontal bounce */
+    }
+}
+
+
+.logo:hover {
+    animation: jelly 0.8s infinite; /* Faster animation on hover */
+    color: #ff00ff; /* Change to a fun color */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #adaaaa;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0.7;
+    display: inline-block; /* Required for the animation to work */
+    transition: opacity 0.3s, color 0.3s; /* Smooth transitions for opacity and color changes */
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #f0a500;
+    animation: jelly 0.8s ease; /* Jelly animation on hover */
+}
+
+
+@keyframes jelly {
+    0%, 100% {
+        transform: scale(1, 1); /* Normal size */
+    }
+    25% {
+        transform: scale(1.2, 0.8); /* Stretch horizontally */
+    }
+    50% {
+        transform: scale(0.8, 1.2); /* Stretch vertically */
+    }
+    75% {
+        transform: scale(1.1, 0.9); /* Slight horizontal bounce */
+    }
+}
+
+
+/* When navbar is hidden, it is pushed out of view */
+.navbar-hidden {
+    top: -100px;
+}
+
+/* Main Section (Profile Image and Social Links) */
+#main-section {
+    background: url('img/mountain.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.profile-circle {
+    width: 150px;
+    height: 150px;
+    margin-left: 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid white;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Social Icons Container */
+.social-links {
+    margin: 20px 0;
+}
+
+.social-icons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Translucent border */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #f0a500;
+}
+
+.intro-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: antiquewhite;
+}
+
+.intro-text h2 {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Section Styles (About, Projects, Skills, Contact) */
+
+
+/* About Me Section (Centered Content) */
+#about {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Ensures content stacks vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center-aligns text */
+    background-color: antiquewhite; /* Matches other section styles */
+    padding: 20px; /* Adds spacing to avoid text hitting edges */
+    box-sizing: border-box; /* Includes padding in height calculation */
+}
+
+#about .content {
+    max-width: 1000px; /* Restricts the width of the text for consistency */
+}
+
+#about p {
+    font-size: 19px; /* Ensures consistent text size */
+    line-height: 1.8; /* Improves readability */
+    text-align: justify; /* Justifies text to align both left and right edges */
+    margin-bottom: 20px; /* Adds spacing between paragraphs */
+}
+
+
+
+section {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Align content vertically */
+    align-items: center; /* Horizontally center */
+    justify-content: center; /* Vertically center */
+    padding: 50px 20px;
+    background-color: antiquewhite;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+   
+}
+
+section p, section ul {
+    font-size: 19px;
+    justify-content: center;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center; /* Vertically aligns the content */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+}
+
+.project-item h3 {
+    margin-bottom: 10px;
+}
+
+.project-item img {
+    width: 150px; /* Adjust image width */
+    height: auto;
+    border-radius: 19px;
+    margin-right: 20px; /* Adds space between the image and text */
+}
+
+.project-item a {
+    display: inline-block;
+}
+
+.project-item a:hover img {
+    opacity: 0.8; /* Adds a hover effect on the image */
+}
+
+.project-description {
+    max-width: calc(100% - 170px); /* Keeps space for the image and prevents overflow */
+}
+/* Hover effect */
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills Section */
+#skills {
+    padding: 40px;
+    
+}
+
+#skills .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1000px;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Category Section */
+.skills-category {
+    margin-bottom: 30px;
+}
+
+.skills-category h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+/* Skills List */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills-list span {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 8px 15px;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for skills */
+.skills-list span:hover {
+    background-color: #f0a500;
+    cursor: pointer;
+}
+
+/* Certifications & Achievements Section */
+#certifications {
+    padding: 40px;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+}
+
+#certifications .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%; /* Ensures it adapts within the parent width */
+}
+
+#certifications h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Achievement Item */
+.achievement-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 1000px; /* Ensures items don’t exceed the container width */
+    width: 100%; /* Adapts to the container width */
+     /* Centers each achievement item */
+}
+
+.achievement-item h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.achievement-item p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Hover effect */
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* External Link Icon */
+.external-link {
+    margin-left: 10px; /* Space between title and icon */
+    display: inline-block;
+    vertical-align: middle; /* Align icon with the text */
+}
+
+.link-icon {
+    width: 18px;
+    height: 18px;
+    fill: #f0a500; /* Icon color */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for the icon */
+.external-link:hover .link-icon {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+/* Footer Section */
+#footer {
+    background: url('img/mountain.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#footer p {
+    font-size: 14px;
+}
