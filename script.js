@@ -25,6 +25,16 @@ window.addEventListener("scroll", () => {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
 });
 
+// document.getElementById("readMoreBtn").addEventListener("click", function () {
+//     var moreText = document.getElementById("moreText");
+//     if (moreText.style.display === "none" || moreText.style.display === "") {
+//         moreText.style.display = "block";
+//         this.textContent = "Read Less";
+//     } else {
+//         moreText.style.display = "none";
+//         this.textContent = "Read More";
+//     }
+// });
 
 
 
