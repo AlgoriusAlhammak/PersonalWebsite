@@ -144,6 +144,7 @@ nav a:hover {
     overflow: hidden;
     margin-bottom: 20px;
     border: 2px solid white;
+
 }
 
 .profile-circle img {
@@ -158,12 +159,14 @@ nav a:hover {
 }
 
 .social-icons-container {
+
+
     display: flex;
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    justify-content: center; /* centers icons horizontally */
+    align-items: center;     /* centers them vertically */
     width: 100%;
-    justify-items: center;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Translucent border */
+    border: 2px solid rgba(255, 255, 255, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
