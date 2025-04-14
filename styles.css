@@ -163,8 +163,8 @@ nav a:hover {
 
     display: flex;
     gap: 20px;
-    justify-content: center; /* centers icons horizontally */
-    align-items: center;     /* centers them vertically */
+    justify-content: center; /* horizontally aligns icons */
+    align-items: center;     /* vertically aligns icons */
     width: 100%;
     border: 2px solid rgba(255, 255, 255, 0.5);
     padding: 20px;
